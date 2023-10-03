@@ -1,0 +1,17 @@
+[
+    {
+      "id": "001",
+      "question": "¿Qué es Sereno?",
+      "answer": "Sereno es un hub innovador diseñado para facilitar el envío y recepción de remesas en moneda estable a lo largo de América Latina. Con nuestro enfoque en la seguridad, eficiencia y facilidad de uso, brindamos a nuestros usuarios una forma confiable de gestionar sus activos y conectar con sus seres queridos en todo el continente."
+    },
+    {
+      "id": "002",
+      "question": "¿Desde qué países puedo registrarme?",
+      "answer": "Puedes registrarte en Sereno desde cualquier país de América Latina. Sin embargo, inicialmente, solo ofrecemos la posibilidad de cargar y retirar fondos a través de los siguientes métodos de pago disponibles en: Argentina, Colombia, Panamá, Perú, Venezuela, USDT TRC-20 y  Zelle ( Solo Depósitos)"
+    },
+    {
+      "id": "003",
+      "question": "¿Qué tan Seguro esta mi dinero?",
+      "answer": "En Sereno, la seguridad de tu dinero es nuestra máxima prioridad. Implementamos medidas avanzadas de seguridad, incluyendo encriptación de datos  y supervisión constante para garantizar la protección de tus activos. Además, colaboramos con proveedores independientes de liquidez verificados y autorizados para asegurar transacciones seguras. Tu confianza es fundamental para nosotros, y nos esforzamos en ofrecer un entorno financiero confiable y protegido para tus operaciones."
+    }
+  ]  

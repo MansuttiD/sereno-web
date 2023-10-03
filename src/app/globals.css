@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .blue_gradient {
+    @apply bg-gradient-to-l from-blue-400 to-blue-500;
+  }
+
+  .blue_gradient-2 {
+    @apply bg-gradient-to-tr from-blue-500 to-blue-400;
+  }
+
+  .blue_gradient-header {
+    @apply bg-gradient-to-l from-blue-400 to-blue-500  md:bg-none;
+  }
+
+  .subtitles-p {
+    @apply font-medium text-xl leading-3 font-sans;
+  }
+
+  .subtitles-span {
+    @apply font-semibold text-xl leading-3 font-sans;
+    
+  }
+
+    /*Header*/
+
+    .menu {
+      @apply transition-all duration-300 absolute blue_gradient-header rounded-2xl p-5  md:flex md:static md:gap-[14rem];
+    }
+  
+    .menu-activce {
+      @apply transform translate-y-8 right-6 sm:right-9 md:translate-y-0;
+    }
+  
+    .menu-inactive {
+      @apply transform -translate-y-96 right-6 md:translate-y-0;
+    }
+
+  /* home-join */
+
+  .home_join_article {
+    @apply mx-auto max-w-xs flex flex-col justify-center items-center text-center md:max-w-3xl;
+  }
+
+  .home_join_header {
+    @apply text-dark_blue font-sans ;
+  }
+
+  .home_join_title {
+    @apply h-9 text-2xl font-medium md:text-[60px] md:h-16;
+  }
+
+  .home_join_description {
+    @apply text-md font-normal mb-5 md:text-[30px];
+  }
+
+  .home_join_buttons {
+    @apply font-sans text-base px-5 py-2 rounded-[10px];
+  }
+
+  .home_join_button_white {
+    @apply text-blue-500 border-blue-500 border-[1px];
+  }
+
+  /* Payment-Header */
+
+  .paymenth-subcontainer {
+    @apply text-dark_blue  font-sans max-w-[17rem] mx-auto xs:max-w-lg md:max-w-6xl;
+  }
+
+  .h2s-title {
+    @apply text-xl font-medium text-center mb-1 xs:text-[32px] md:text-[50px];
+  }
+
+  .paymenth-container-articles {
+    @apply flex flex-col gap-3 md:grid grid-cols-2 grid-rows-2 p-4;
+  }
+
+  .paymenth-article {
+    @apply bg-white rounded-[20px] mx-auto flex flex-row gap-3 p-3  md:w-full;
+  }
+
+  .paymenth-card-title {
+    @apply font-semibold text-base md:text-[30px];
+  }
+
+  .paymenth-card-description {
+    @apply font-normal text-sm md:text-xl;
+  }
+
+  /* footer */
+
+  .footer_media {
+    @apply text-white max-w-xs mx-auto text-center md:max-w-7xl md:mx-10 md:text-left lg:mx-24;
+  }
+
+  .footer_section {
+    @apply font-sans md:flex md:gap-20;
+  }
+
+  .footer_title {
+    @apply text-md font-normal py-4 border-b-2 md:border-b-0 lg:text-xl;
+  }
+
+  .footer_list {
+    @apply text-base font-normal py-4 border-b-2 md:border-b-0 lg:text-md;
+  }
+
+    /* home-download */
+    .home_download_subcontainer {
+      @apply text-dark_blue  font-sans max-w-[17rem] mx-auto xs:max-w-lg md:max-w-6xl;
+    }
+  
+    .home_download_article {
+      @apply mx-auto max-w-[20rem] px-1 xs:max-w-xs sm:max-w-xl  md:p-4 md:max-w-6xl;
+    }
+
+    /* Home-First Section (SLIDER) */
+      .phone-mockup {
+    @apply absolute bg-cover bg-center bg-no-repeat w-full h-full flex align-middle justify-center;
+    background-image: url('/assets/img/home/mokupprincipal.svg');
+  }
+
+
+    .principal-subcontainer {
+    @apply text-dark_blue grid grid-rows-1 justify-center align-middle font-sans max-w-[20rem] mx-auto xs:max-w-lg md:max-w-6xl;
+  }
+   /* Twitter Section (SLIDER) */
+   .twitter-subcontainer {
+    @apply max-w-[17rem] mx-auto xs:max-w-lg md:max-w-6xl;
+   }
+
+     /* faqs */
+
+  .faqs-article {
+    @apply font-sans p-4 max-w-xs mx-auto mb-14 xms:max-w-[24rem] md:max-w-[55rem] lg:max-w-6xl;
+  }
+
+  .faqs-title {
+    @apply text-dark_blue font-medium text-center text-xl xs:text-[32px] md:text-[50px];
+  }
+
+  /* faq */
+
+  .faq-card {
+    @apply bg-white overflow-y-hidden border-t-blue_500 border-t-[6px] border-b-[1px] md:border-t-[20px] rounded-[10px] transition-all duration-300  pl-6 pr-4 shadow-faqbox;
+  }
+
+  .faq-question {
+    @apply text-dark_blue font-medium text-xs pt-3 pb-4 flex gap-2 sm:text-[15px] md:text-[30px] md:pt-9 md:pb-9;
+  }
+
+  .faq-response {
+    @apply text-dark_blue font-normal text-xs md:text-[28px];
+  }
+
+  /* Register */
+
+  .register-backg {
+    background-image:'url(../home/wavedownload.svg)';
+  }
+
+  
+  
+}
+
+.clip-path-polygon-angled {
+  clip-path: polygon(18% 0%, 100% 0%, 83% 100%, -1% 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
+}
