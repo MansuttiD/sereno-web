@@ -20,8 +20,8 @@ export default function Principalsection() {
           </p>
           </div>
 
-          <Link  href="/register">
-          <button className="bg-gradient-to-l from-blue-400 to-blue-500 text-base px-5 py-2 rounded-[10px] text-white m-auto sm:m-0">
+          <Link href="/register">
+          <button className="bg-gradient-to-l from-blue-400 to-blue-500 text-base px-5 py-2 rounded-[10px] text-white w-full m-auto sm:m-0">
           Lista de Espera
           </button>
           </Link>
