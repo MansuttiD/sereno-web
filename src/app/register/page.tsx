@@ -1,7 +1,7 @@
 'use client';
 import FooterPrincipal from '@/src/components/shared/FooterPrincipal';
-import HeaderPrincipal from '@/src/components/shared/HeaderPrincipal';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
@@ -51,16 +51,16 @@ export default function Registersereno() {
   }
 `;
 
-Swal.fire({
-  title: 'Cargando',
+    Swal.fire({
+      title: 'Cargando',
       text: 'Por favor espera...',
       icon: 'info',
       allowOutsideClick: false, // Evita que el usuario cierre el cuadro de alerta haciendo clic fuera de él
       showCancelButton: false, // Puedes cambiar esto según tus necesidades
       showConfirmButton: false, // Puedes cambiar esto según tus necesidades
-})
+    });
 
-axios
+    axios
       .post(
         url,
         {
@@ -74,12 +74,17 @@ axios
         }
       )
       .then((res) => {
-        Swal.close();
+        
 
         if (res.data.errors) {
           const message = res.data.errors[0].message;
           throw new Error(message);
         }
+
+        
+
+        router.push("./register/success")
+        Swal.close();
 
         setSuccessfulRegistration(true);
         reset(defaultValues);
@@ -92,18 +97,19 @@ axios
           confirmButtonText: 'Cool',
         });
       });
-    };
+  };
+  
+  const router = useRouter()
 
   return (
+    
+
+
     <>
-      <HeaderPrincipal />
-      <div
-        className="flex justify-center bg-no-repeat bg-contain bg-general_backgound bg-right-bottom sm:bg-wavedownload"
-      >
+      
+      <div className="flex justify-center bg-no-repeat bg-contain bg-general_backgound bg-right-bottom sm:bg-wavedownload">
         <section
-          className={`${
-            successfulRegistration ? 'hidden' : 'flex'
-          }  flex-col items-center py-14  md:flex-row md:gap-[6rem] lg:py-6`}
+          className="flex flex-col items-center py-14  md:flex-row md:gap-[6rem] lg:py-6"
         >
           <div className="md:mb-[150px] p-3">
             <header className="mb-6">
@@ -138,9 +144,11 @@ axios
                   />
                   {errors.email && <span>Este campo es requerido</span>}
 
-
-                  <select className="h-[56px] border-[2px] border-solid border-[#9e9e9ec3] rounded-[10px] p-4 outline-none text-[#000]" {...register('country', { required: true })}>
-                  <option value="select">Selecciona el País</option>
+                  <select
+                    className="h-[56px] border-[2px] border-solid border-[#9e9e9ec3] rounded-[10px] p-4 outline-none text-[#000]"
+                    {...register('country', { required: true })}
+                  >
+                    <option value="select">Selecciona el País</option>
                     <option value="AR">Argentina</option>
                     <option value="BZ">Belice</option>
                     <option value="BO">Bolivia</option>
@@ -173,11 +181,9 @@ axios
                 <div>
                   <textarea
                     {...register('message', { required: true })}
-                    
                     placeholder="¿Qué te gustaría lograr utilizando Sereno? (Ej. Cargar con un método de pago en particular, envío de remesas, inversiones)"
                     className="h-[140px] border-[2px] border-solid border-[#9e9e9ec3] rounded-[10px] p-4 outline-none w-full"
                   />
-
                 </div>
                 {errors.message && <span>Este campo es requerido</span>}
 
@@ -194,16 +200,6 @@ axios
               alt="Descarga Sereno"
               className="hidden md:block md:h-[600px] lg:h-[700px]"
             />
-          </div>
-        </section>
-        <section className={`px-6 ${successfulRegistration ? '' : 'hidden'}`}>
-          <div className="flex flex-col justify-center align-middle text-center mb-6 min-h-[67vh] max-w-md md:mb-8 md:max-w-2xl">
-            <h2 className="text-2xl mb-4 font-semibold md:text-4xl md:text-xxl">
-              ¡Registro Exitoso!
-            </h2>
-            <p className="from-blue-700 text-base md:text-md">
-            ¡Excelente! Has dado el primer paso para una nueva forma de manejar tus remesas con Sereno.
-            </p>
           </div>
         </section>
       </div>

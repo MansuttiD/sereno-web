@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -16,7 +17,7 @@ export default function HeaderPrincipal() {
       <div className="flex justify-between overflow-x-hidden max-w-xs mx-auto sm:max-w-xl md:max-w-6xl ">
         <div className="w-36">
           <Link href="/">
-          <img src="./assets/img/header/logo.svg" alt="Logo" className="w-full h-full" />
+          <Image width={300} height={200} src="/assets/img/header/logo.svg" alt="Logo" className="w-full h-full" />
           </Link>
         </div>
         <nav
@@ -48,7 +49,7 @@ export default function HeaderPrincipal() {
           </div>
         </nav>
         <div onClick={handleMenuActive} className="md:hidden">
-          <img src="/assets/img/header/burger.svg" alt="" />
+          <img src="/assets/img/header/burger.svg" alt="burger" />
         </div>
       </div>
     </header>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import HeaderPrincipal from '../components/shared/HeaderPrincipal';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,7 +20,10 @@ export default function RootLayout({
       <head>
         <script async defer src="/fb-pixel.js" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <HeaderPrincipal  />
+        {children}
+        </body>
     </html>
   );
 }
