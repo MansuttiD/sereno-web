@@ -16,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <head>
+        <script async defer src="/fb-pixel.js" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
