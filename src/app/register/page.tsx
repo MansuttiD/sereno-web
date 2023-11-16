@@ -1,10 +1,13 @@
 'use client';
 import FooterPrincipal from '@/src/components/shared/FooterPrincipal';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+
+
 
 const url = 'https://api.serenoapp.com/v1/graphql/';
 
@@ -81,8 +84,8 @@ export default function Registersereno() {
           throw new Error(message);
         }
 
-        
 
+        Cookies.set('sereno_success', res.status.toString())
         router.push("./register/success")
         Swal.close();
 
@@ -100,6 +103,11 @@ export default function Registersereno() {
   };
   
   const router = useRouter()
+
+  useEffect(() => {
+    Cookies.remove('sereno_success')
+  }, [])
+  
 
   return (
     
